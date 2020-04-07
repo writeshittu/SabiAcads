@@ -1,0 +1,10 @@
+.bg-navy{
+    background-color: navy;
+    border: 3px;
+    padding: 3px;
+    margin: 2px;
+    display: inline-flex;
+    flex-direction: row;
+}
+
+    
