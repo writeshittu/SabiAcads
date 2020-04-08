@@ -28,7 +28,7 @@ class Cardlist extends React.Component {
           ];
     return ( 
     <div >
-        <div className="mt4 pv4">
+        <div className="mt4 pv2">
         { lessonList.map((lessonItem) => {
                 return (
                   <Card
