@@ -1,7 +1,9 @@
 import React from 'react';
+import {BrowserRouter as Router,Route,Switch} from 'react-router-dom'
 import NavBar from './components/NavBar';
-import Footer from './components/Footer';
+import Dashboard from './components/Dashboard';
 import Cardlist from './components/Cardlist';
+import Footer from './components/Footer';
 
 
 
@@ -9,11 +11,16 @@ class App extends React.Component {
   render(){
     
   return (
-    <div className="">
+    <React.Fragment>
       <NavBar/>
-      <Cardlist/>
+      <Router>
+      <Switch>
+      <Route exact path="/" component={Cardlist}/>
+      <Route path="/dashboard" component={Dashboard}/>
+      </Switch>
+      </Router>
       <Footer/>
-    </div>
+    </React.Fragment>
   );
   }
 }

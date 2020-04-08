@@ -13,7 +13,7 @@ class NavBar extends React.Component{
                 <Nav className="ml-auto">
                 <Nav.Link href="#home">Coding For Business</Nav.Link>
                 <Nav.Link href="#link">Teach on Udemy</Nav.Link>
-                <Nav.Link href="#link"> CartItem/> </Nav.Link>
+                <Nav.Link href="/dashboard"> CartItem/> </Nav.Link>
                 <Nav.Link href="#link"> WishList/> </Nav.Link>
                 <Nav.Link href="#link">Notification</Nav.Link>
                 <NavDropdown title="Courses" id="basic-nav-dropdown">
