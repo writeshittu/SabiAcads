@@ -7,9 +7,7 @@ import Cardlist from './components/Cardlist';
 
 class App extends React.Component {
   render(){
-
     
-
   return (
     <div className="">
       <NavBar/>

@@ -36,5 +36,9 @@
   },
   "devDependencies": {
     "tachyons": "^4.10.0"
+  },
+  "engines": {
+    "node": "12.13.0",
+    "npm": "6.12.0"
   }
 }
