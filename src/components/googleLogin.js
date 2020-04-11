@@ -11,7 +11,7 @@ return(
     <GoogleLogin
     clientId="795533024611-i2k95o3jahhmekv15nkm0ht9fkevgo8c.apps.googleusercontent.com"
     render={renderProps => (
-      <button onClick={renderProps.onClick} disabled={renderProps.disabled} >Login with Google</button>
+      <button onClick={renderProps.onClick} >Login with Google</button>
     )}
     buttonText="Login"
     onSuccess={responseGoogle}
