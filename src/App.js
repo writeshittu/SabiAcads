@@ -1,6 +1,7 @@
 import React from 'react';
 import {BrowserRouter as Router,Route,Switch} from 'react-router-dom'
 import NavBar from './components/NavBar';
+// import Sidebar from './components/sidebar';
 import Dashboard from './components/Dashboard';
 import Cardlist from './components/Cardlist';
 import Footer from './components/Footer';
@@ -13,6 +14,7 @@ class App extends React.Component {
   return (
     <React.Fragment>
       <NavBar/>
+      {/* <Sidebar/> */}
       <Router>
       <Switch>
       <Route exact path="/" component={Cardlist}/>
