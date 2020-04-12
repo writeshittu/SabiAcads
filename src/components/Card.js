@@ -4,7 +4,7 @@ import React from 'react';
 class Card extends React.Component {
         render(){
     return(
-        <div className='tc bg-light-blue dib-l br3 pa3 ma4 grow bw2 shadow-5'>
+        <div className='centre bg-light-blue dib-l br3 pa3 ma4 grow bw2 shadow-5'>
              
             <div>
             <p >{this.props.name}</p>

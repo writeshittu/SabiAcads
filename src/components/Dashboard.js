@@ -8,7 +8,7 @@ class Dashboard extends React.Component{
     render(){
         return(
             <div  className="row pa4 ma4">
-                <div className="col-sm-4 mh3" >
+                <div className="col-sm-4">
                     
                     <FileInput/>
                 </div>
