@@ -6,6 +6,7 @@ import Dashboard from './components/Dashboard';
 import Cardlist from './components/Cardlist';
 import Footer from './components/Footer';
 import Login from './components/googleLogin';
+import Logout from './components/logout';
 
 
 
@@ -39,7 +40,7 @@ this.setState({ searchfield: event.target.value})
       <Switch>
       <Route exact path="/" component={Cardlist}/>
       <Route path="/login" component={Login}/>
-      {/* <Route path="/logout" component={Logout}/> */}
+      <Route path="/logout" component={Logout}/>
       <Route path="/dashboard" component={Dashboard}/>
       </Switch>
       </Router>

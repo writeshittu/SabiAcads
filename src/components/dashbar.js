@@ -1,7 +1,7 @@
 import React from 'react';
 import {Navbar,Nav,NavDropdown,Form,FormControl,Button} from 'react-bootstrap';
 import { withRouter } from "react-router-dom";
-// import {Logout } from "./googleLogin";
+import Logout from "./logout";
 import 'font-awesome/css/font-awesome.min.css';
 
 class DashNav extends React.Component{
@@ -31,7 +31,8 @@ class DashNav extends React.Component{
                     <NavDropdown.Divider />
                     <NavDropdown.Item href="#"> Explore More</NavDropdown.Item>
                 </NavDropdown>
-                {/* <Logout/> */}
+                {window.localStorage.name}
+                <Logout/>
                
                 </Nav>
                
