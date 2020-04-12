@@ -1,5 +1,6 @@
 import React from "react";
 
+
 let backgroundStyle = {
     backgroundImage : "url(https://res.cloudinary.com/undercover/image/upload/v1586189926/VGG-Udemy_clone/udemy_clone_t2xg5v.jpg)",
     backgroundRepeat: "no-repeat",

@@ -1,12 +1,13 @@
 import React from 'react';
 import {Navbar,Nav,NavDropdown,Form,FormControl,Button} from 'react-bootstrap';
-import Login  from "./googleLogin";
+import { withRouter } from "react-router-dom";
+// import {Logout } from "./googleLogin";
 import 'font-awesome/css/font-awesome.min.css';
 
-class NavBar extends React.Component{
-
+class DashNav extends React.Component{
+   
     render(
-        onClick=() => alert('Please Login with Google')
+       
     ){
         return(
             <Navbar  bg="light-green" expand="lg">
@@ -18,7 +19,7 @@ class NavBar extends React.Component{
                     <Button variant="outline-success"><i className="fa fa-search fa-search"></i></Button>
                 </Form>
                 <Nav className="ml-auto">
-                <Nav.Link  onClick={onClick}>Teach on Udemy</Nav.Link>
+                <Nav.Link>Teach on Udemy</Nav.Link>
                 <Nav.Link href="#link"><i className="fa fa-heart fa-heart"></i></Nav.Link>
                 <Nav.Link href="#link"><i className="fa fa-cart-plus"></i></Nav.Link>
                 <NavDropdown title="Courses" id="basic-nav-dropdown">
@@ -30,16 +31,13 @@ class NavBar extends React.Component{
                     <NavDropdown.Divider />
                     <NavDropdown.Item href="#"> Explore More</NavDropdown.Item>
                 </NavDropdown>
-                {/* <Nav.Link  className="bg-light-red ba " href="/login">Login with Google</Nav.Link> */}
-                <Login title="Login as student" isStudent={true}/>
-                <Login title="Login as Teacher" isStudent={false}/>
+                {/* <Logout/> */}
                
                 </Nav>
                
             </Navbar.Collapse>
-           
             </Navbar>
         );
     }
 }
-export default NavBar;
+export default  withRouter(DashNav);

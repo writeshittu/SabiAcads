@@ -1,4 +1,6 @@
 import React from 'react';
+import NavBar from './NavBar';
+import Searchbox from './searchfield';
 import Card from './Card';
 
 class Cardlist extends React.Component {
@@ -40,9 +42,12 @@ class Cardlist extends React.Component {
           ];
     return ( 
     <div >
+          <NavBar/>
+          <Searchbox searchChange ={this.onSearchChange}/>
         <div className="mt4 pv2">
         { lessonList.map((lessonItem) => {
                 return (
+                  
                   <Card
                   key = {lessonItem.i} 
                     name={lessonItem.name}

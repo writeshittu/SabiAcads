@@ -1,0 +1,6 @@
+{
+    "posts" : [
+        {"id" : 1, "videoUrl" : "https://youtube.com", "description" : "First video"},
+        {"id" : 2, "videoUrl" : "https://youtube.com", "description" : "Second video"}
+    ]
+}
