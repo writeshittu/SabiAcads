@@ -1,7 +1,6 @@
 import React from 'react';
 import NavBar from './NavBar';
 import Searchbox from './searchfield';
-import Card from './Card';
 import axios from 'axios';
 import {withRouter} from 'react-router-dom';
 
@@ -11,7 +10,7 @@ class Cardlist extends React.Component {
       axios.get(`https://oauth2.googleapis.com/tokeninfo?id_token=${window.localStorage.getItem("token_id")}`)
       .then(res => {
         console.log(res.data)
-          if (res.data != undefined && res.data.name != undefined) {
+          if (res.data !== undefined && res.data.name !== undefined) {
             window.localStorage.setItem('name', res.data.name);
               this.props.history.push({pathname : '/dashboard', state:{loginSuccessful:"loginmarked", isStudent:window.localStorage.getItem('isStudent')}});
           }
@@ -66,27 +65,24 @@ class Cardlist extends React.Component {
             },
           ];
     return ( 
-    <div >
-          <NavBar/>
-          <Searchbox searchChange ={this.onSearchChange}/>
-        <div className="mt4 pv2">
-        { lessonList.map((lessonItem) => {
-                return (
-                  
-                  <Card
-                  key = {lessonItem.i} 
-                    name={lessonItem.name}
-                    image={lessonItem.image}
+        <div> 
+              <NavBar />
+              <Searchbox searchChange={this.onSearchChange} />
+             
+              <div className="container-fluid mt4">
+                <div className="row justify-content-center">
+                  {
+                    lessonList.map((lessonItem) => 
+                      <div className="col-sm-3 col-xs-6 grow br3 tc ma4 bg-light-blue pa2 shadow-2">
+                        <p >{lessonItem.name}</p>
+                        <img src={lessonItem.image} alt="course-logo" width="200px" />
+                      </div>)
+                  }
+                </div>
+              </div>
                 
-                />
-            );   
-            })
-        }
-        </div>
-        
-    </div>
-    
-    );
-    }
+        </div>      
+    )
+  } 
 }
 export default withRouter(Cardlist);

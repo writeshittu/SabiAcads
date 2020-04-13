@@ -1,88 +1,137 @@
 {
-    "posts": [
+  "posts": [
+    {
+      "id": 1,
+      "videoUrl": "https://youtube.com",
+      "description": "First video"
+    },
+    {
+      "id": 2,
+      "videoUrl": "https://youtube.com",
+      "description": "Second video"
+    }
+  ],
+  "courses": [
+    {
+      "id": "html-css",
+      "name": "HTML & CSS",
+      "image": "https://res.cloudinary.com/undercover/image/upload/v1586649811/VGG-Udemy_clone/html_jh7oq9.png",
+      "description": "Introduction to Html and Css",
+      "links": [
         {
-            "id": 1,
-            "videoUrl": "https://youtube.com",
-            "description": "First video"
-        },
-        {
-            "id": 2,
-            "videoUrl": "https://youtube.com",
-            "description": "Second video"
+          "url": "https://www.youtube.com/embed/JKCgwL-IfgM",
+          "title": "HTML & CSS Part 1"
         }
-    ],
-    "courses" : [
+      ]
+    },
+    {
+      "id": "sass",
+      "name": "Sass",
+      "image": "https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/react/sass.svg",
+      "description": "Introduction to Sass",
+      "links": [
         {
-            "id" : "html-css",
-            "name": "HTML & CSS",
-            "image": "https://res.cloudinary.com/undercover/image/upload/v1586649811/VGG-Udemy_clone/html_jh7oq9.png",
-            "description": "Introduction to Html and Css",
-            "links" : [
-                {"url" : "https://www.youtube.com/embed/JKCgwL-IfgM", "title" : "HTML & CSS Part 1"}
-            ]
-          },
-          {
-            "id" : "sass",
-            "name": "Sass",
-            "image": "https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/react/sass.svg",
-            "description": "Introduction to Sass",
-            "links" : [
-                {"url" : "https://youtube.com/", "title" : "HTML & CSS Part 1"}
-            ]
-          },
-          {
-            "id" : "javascript",
-            "name": "JavaScript",
-            "image": "https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/react/es6.svg",
-            "description": "Introduction to Javascript",
-            "links" : [
-                {"url" : "https://youtube.com/", "title" : "HTML & CSS Part 1"}
-            ]
-          },
-          {
-            "id" : "react",
-            "name": "React",
-            "image": "https://res.cloudinary.com/undercover/image/upload/v1586649740/VGG-Udemy_clone/react_f3vtsp.png",
-            "description": "Introduction to React",
-            "links" : [
-                {"url" : "https://www.youtube.com/embed/JKCgwL-IfgM", "title" : "HTML & CSS Part 1"}
-            ]
-          },
-          {
-            "id" : "python",
-            "name": "PYTHON",
-            "image": "https://res.cloudinary.com/undercover/image/upload/v1586649759/VGG-Udemy_clone/python_nbyhp8.png",
-            "description": "Introduction to Python",
-            "links" : [
-                {"url" : "https://youtube.com/", "title" : "HTML & CSS Part 1"}
-            ]
-          },
-          {
-            "id" : "nodejs",
-            "name": "Node js",
-            "image": "https://img.icons8.com/color/144/000000/nodejs.png",
-            "description": "Introduction to Nodejs",
-            "links" : [
-                {"url" : "https://youtube.com/", "title" : "HTML & CSS Part 1"}
-            ]
-          },
-          {
-            "id" : "angularjs",
-            "name": "Angular js",
-            "image": "https://res.cloudinary.com/undercover/image/upload/v1586649303/VGG-Udemy_clone/angular-icon_yfzdmk.svg",
-            "description": "Introduction to Angularjs",
-            "links" : [
-                {"url" : "https://youtube.com/", "title" : "HTML & CSS Part 1"}
-            ]
-          },
-          {
-            "id" : "csharp",
-            "name": "C-SHARP",
-            "image": "https://res.cloudinary.com/undercover/image/upload/v1586649326/VGG-Udemy_clone/C_Sharp_logo_shqcoo.png",
-            "description": "Introduction to CSharp",
-            "links" : [
-                {"url" : "https://youtube.com/", "title" : "HTML & CSS Part 1"}
-            ]
-          }
-    ]
+          "url": "https://youtube.com/",
+          "title": "HTML & CSS Part 1"
+        }
+      ]
+    },
+    {
+      "id": "javascript",
+      "name": "JavaScript",
+      "image": "https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/react/es6.svg",
+      "description": "Introduction to Javascript",
+      "links": [
+        {
+          "url": "https://youtube.com/",
+          "title": "HTML & CSS Part 1"
+        }
+      ]
+    },
+    {
+      "id": "react",
+      "name": "React",
+      "image": "https://res.cloudinary.com/undercover/image/upload/v1586649740/VGG-Udemy_clone/react_f3vtsp.png",
+      "description": "Introduction to React",
+      "links": [
+        {
+          "url": "https://www.youtube.com/embed/JKCgwL-IfgM",
+          "title": "HTML & CSS Part 1"
+        }
+      ]
+    },
+    {
+      "id": "python",
+      "name": "PYTHON",
+      "image": "https://res.cloudinary.com/undercover/image/upload/v1586649759/VGG-Udemy_clone/python_nbyhp8.png",
+      "description": "Introduction to Python",
+      "links": [
+        {
+          "url": "https://youtube.com/",
+          "title": "HTML & CSS Part 1"
+        }
+      ]
+    },
+    {
+      "id": "nodejs",
+      "name": "Node js",
+      "image": "https://img.icons8.com/color/144/000000/nodejs.png",
+      "description": "Introduction to Nodejs",
+      "links": [
+        {
+          "url": "https://youtube.com/",
+          "title": "HTML & CSS Part 1"
+        }
+      ]
+    },
+    {
+      "id": "angularjs",
+      "name": "Angular js",
+      "image": "https://res.cloudinary.com/undercover/image/upload/v1586649303/VGG-Udemy_clone/angular-icon_yfzdmk.svg",
+      "description": "Introduction to Angularjs",
+      "links": [
+        {
+          "url": "https://youtube.com/",
+          "title": "HTML & CSS Part 1"
+        }
+      ]
+    },
+    {
+      "id": "csharp",
+      "name": "C-SHARP",
+      "image": "https://res.cloudinary.com/undercover/image/upload/v1586649326/VGG-Udemy_clone/C_Sharp_logo_shqcoo.png",
+      "description": "Introduction to CSharp",
+      "links": [
+        {
+          "url": "https://youtube.com/",
+          "title": "HTML & CSS Part 1"
+        }
+      ]
+    }
+  ],
+  "subscriptions": [
+    {
+      "courses": [
+        "sass",
+        "html-css",
+        "javascript",
+        "react",
+        "angularjs",
+        "csharp",
+        "nodejs",
+        "python",
+        "sass",
+        "html-css",
+        "html-css"
+      ],
+      "id": "writeshittu@gmail.com"
+    },
+    {
+      "courses": [
+        "sass",
+        "python"
+      ],
+      "id": "yusufsaheedtaiwo@gmail.com"
+    }
+  ]
 }

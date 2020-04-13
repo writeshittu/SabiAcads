@@ -31,7 +31,7 @@ class DashNav extends React.Component{
                     <NavDropdown.Divider />
                     <NavDropdown.Item href="#"> Explore More</NavDropdown.Item>
                 </NavDropdown>
-                {window.localStorage.name}
+                <img  className="br" src={window.localStorage.image} alt="user" />
                 <Logout/>
                
                 </Nav>

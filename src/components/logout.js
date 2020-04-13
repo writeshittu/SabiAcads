@@ -6,7 +6,6 @@ import {withRouter} from "react-router-dom";
 class Logout extends React.Component{
 
     logout = (response) => {
-        alert("Logged out Successfully");
         window.localStorage.removeItem('token_id')
         window.localStorage.removeItem('isStudent');
         window.localStorage.removeItem('name');

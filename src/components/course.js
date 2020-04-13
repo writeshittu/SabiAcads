@@ -2,6 +2,9 @@ import React from "react";
 import StarBar from './courseRating';
 import Card from 'react-bootstrap/Card';
 import { Modal, Button } from "react-bootstrap";
+import axios from 'axios';
+const API_BASE_URL = 'http://localhost:3000/'
+
 
 class Cards extends React.Component {
 
@@ -10,11 +13,11 @@ class Cards extends React.Component {
         this.state = {
             modalShow: false,
             modalTitle : "",
-            url : ""
+            url : "",
+            subscribedCourses : []
         };
 
     }
-
     setModalHide = () => {
         this.setState({ modalShow: false, modalTitle : "", url : "" })
     }
@@ -29,15 +32,17 @@ class Cards extends React.Component {
                 <Card >
                     <Card.Img variant="top" src={this.props.image} height={200} onClick={() => this.setModalShow(this.props.title, this.props.links[0].url)} />
                     <Card.Body >
-                        {/* <Card.Title></Card.Title> */}
-                        <Card.Text>
+                        <Card.Text style={{minHeight:"50px"}}>
                             {this.props.title}
-                            {this.props.description}
+                            <p>{this.props.description}</p>
                         </Card.Text>
                     </Card.Body>
                     <Card.Footer>
-                        <small className="text-muted">Last updated 3 mins ago</small>
-                        <StarBar />
+                        <div class="text-right">
+                            {this.props.subscribed && <button className="pa2 btn-primary pointer o-20" disabled onClick={()=>this.props.onSubscribe(this.props.id)}>SUBSCRIBE</button>}
+                            {!this.props.subscribed && <button className="pa2 btn-primary"  onClick={()=>this.props.onSubscribe(this.props.id)}>SUBSCRIBE</button>}
+                            </div>
+                        <p className="tc mt3"><StarBar /></p>
                     </Card.Footer>
                 </Card>
 
@@ -51,18 +56,17 @@ class Cards extends React.Component {
                     <Modal.Header closeButton>
                         <Modal.Title id="contained-modal-title-vcenter">
                             {this.state.modalTitle}
-        </Modal.Title>
+                        </Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         <div class="embed-responsive embed-responsive-21by9">
-                        <iframe src={this.state.url} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="true"></iframe>
+                        <iframe title={this.state.courseId} src={this.state.url} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="true"></iframe>
                         </div>
                     </Modal.Body>
                     <Modal.Footer>
                         <Button onClick={() => { this.setState({ modalShow: false }) }}>Close</Button>
                     </Modal.Footer>
                 </Modal>
-
 
             </div>
         )
@@ -71,29 +75,76 @@ class Cards extends React.Component {
 
 class Courses extends React.Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            subscribedCourses : []
+        };
+
+        axios.get(`${API_BASE_URL}subscriptions/${window.localStorage.getItem('email')}`)
+        .then(res => {
+            this.setState({subscribedCourses : res.data.courses !== undefined ? res.data.courses : []});
+        })
+
+    }
+
+    onSubscribe = (courseId)=> {
+        console.log("Passed Id is " + courseId);
+        axios.get(`${API_BASE_URL}subscriptions/${window.localStorage.getItem('email')}`)
+        .then(res => {
+            if (res.data !== undefined && res.data.id !== undefined) {
+                var currentSubscribedCourses = res.data.courses;
+                currentSubscribedCourses.push(courseId);
+                console.log("Data to put ");
+                console.log(currentSubscribedCourses);
+                axios.put(`${API_BASE_URL}subscriptions/${window.localStorage.getItem('email')}`, { courses : currentSubscribedCourses})
+                .then(res=>{
+                this.setState({subscribedCourses : currentSubscribedCourses});
+                })
+                .catch(err=> {
+                    console.log("Error occurred while subscribing due to ");
+                    console.error(err);
+                });
+            } else {
+
+            }
+            
+        }).catch(err=> {
+            console.log("Record not found. Adding course from scratch");
+            console.log(err);
+            // this.setState({subscribedCourses : res.data.courses != undefined ? res.data.courses : []});
+            // var currentSubscribedCourses = this.state.subscribedCourses;
+            var currentSubscribedCourses = [courseId];
+            axios.post(`${API_BASE_URL}subscriptions`, { courses : currentSubscribedCourses, id : window.localStorage.getItem('email')})
+            .then(res=>{
+                this.setState({subscribedCourses : currentSubscribedCourses});
+            })
+            .catch(err=> {
+                console.log("Error occurred while subscribing due to ");
+                console.error(err);
+            });
+        })
+        
+        var currentSubscribedCourses = this.state.subscribedCourses;
+        currentSubscribedCourses = currentSubscribedCourses.push(courseId);
+
+
+    }
+
     render() {
         return (
             <div>
-                <div className="container">
-                    <div className="row tc">
+                        <p>You have Subscribed {this.state.subscribedCourses.length} Courses</p>
+                <div className="container-fluid">
+                    <div className="row center">
                         {
                             this.props.data.map(data =>
-                                <div className="col-sm-3">
-                                    <Cards title={data.name} description={data.description} links={data.links} image={data.image} />
+                                <div className="col col-sm-3 col-xs-6 mb4">
+                                    
+                                    <Cards title={data.name} description={data.description} onSubscribe={this.onSubscribe} subscribed={(this.state.subscribedCourses === undefined) ? false : this.state.subscribedCourses.includes(data.id)} id={data.id} links={data.links} image={data.image} />
                                 </div>
                             )
-                        }
-
-                        {/* <div className="col-sm-3">
-                            <Cards/>
-                        </div>
-                        <div className="col-sm-3">
-                            <Cards/>
-                        </div>
-                        <div className="col-sm-3">
-                            <Cards/>
-                        </div> */}
-
+                        } 
                     </div>
 
                 </div>
