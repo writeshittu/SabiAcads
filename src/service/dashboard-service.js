@@ -1,8 +1,9 @@
 import axios from 'axios';
-const API_BASE_URL = 'http://localhost:3000/'
+import util from '../util/util';
+
 
 const getCourseLists = (callBackFunction) => {
-    axios.get(`${API_BASE_URL}courses`)
+    axios.get(`${util.API_BASE_URL}courses`)
     .then(res => {
         console.log(res.data);
         callBackFunction(res.data);

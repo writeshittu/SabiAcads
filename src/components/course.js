@@ -3,7 +3,8 @@ import StarBar from './courseRating';
 import Card from 'react-bootstrap/Card';
 import { Modal, Button } from "react-bootstrap";
 import axios from 'axios';
-const API_BASE_URL = 'http://localhost:3000/'
+import util from '../util/util';
+
 
 
 class Cards extends React.Component {
@@ -76,12 +77,13 @@ class Cards extends React.Component {
 class Courses extends React.Component {
 
     constructor(props) {
+        console.log("API ==> " + util.API_BASE_URL);
         super(props);
         this.state = {
             subscribedCourses : []
         };
 
-        axios.get(`${API_BASE_URL}subscriptions/${window.localStorage.getItem('email')}`)
+        axios.get(`${util.API_BASE_URL}subscriptions/${window.localStorage.getItem('email')}`)
         .then(res => {
             this.setState({subscribedCourses : res.data.courses !== undefined ? res.data.courses : []});
         })
@@ -90,14 +92,14 @@ class Courses extends React.Component {
 
     onSubscribe = (courseId)=> {
         console.log("Passed Id is " + courseId);
-        axios.get(`${API_BASE_URL}subscriptions/${window.localStorage.getItem('email')}`)
+        axios.get(`${util.API_BASE_URL}subscriptions/${window.localStorage.getItem('email')}`)
         .then(res => {
             if (res.data !== undefined && res.data.id !== undefined) {
                 var currentSubscribedCourses = res.data.courses;
                 currentSubscribedCourses.push(courseId);
                 console.log("Data to put ");
                 console.log(currentSubscribedCourses);
-                axios.put(`${API_BASE_URL}subscriptions/${window.localStorage.getItem('email')}`, { courses : currentSubscribedCourses})
+                axios.put(`${util.API_BASE_URL}subscriptions/${window.localStorage.getItem('email')}`, { courses : currentSubscribedCourses})
                 .then(res=>{
                 this.setState({subscribedCourses : currentSubscribedCourses});
                 })
@@ -115,7 +117,7 @@ class Courses extends React.Component {
             // this.setState({subscribedCourses : res.data.courses != undefined ? res.data.courses : []});
             // var currentSubscribedCourses = this.state.subscribedCourses;
             var currentSubscribedCourses = [courseId];
-            axios.post(`${API_BASE_URL}subscriptions`, { courses : currentSubscribedCourses, id : window.localStorage.getItem('email')})
+            axios.post(`${util.API_BASE_URL}subscriptions`, { courses : currentSubscribedCourses, id : window.localStorage.getItem('email')})
             .then(res=>{
                 this.setState({subscribedCourses : currentSubscribedCourses});
             })
