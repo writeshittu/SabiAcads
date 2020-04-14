@@ -12,16 +12,19 @@ let backgroundStyle = {
     const Searchbox = ({searchfield, searchChange}) =>{
 
         return(
-            <div className="container-fluid" style={backgroundStyle} >
+            <div style={backgroundStyle} >
+                <div className="container-fluid">
                 <div className ='row'>
-                    <div className ='col-sm-3 mt6 offset-2 tc bg-white' >
+                    <div className ='ccol col-sm-3 mt5 offset-2 tc bg-white' >
                     <h3  className ="ma3"> Let’s start something</h3>
                     <p>Begin a plan to meet your 2020 goals with our courses</p>
-                    <input className = 'pa3 shadow2  bg-light-gray' type="search" 
+                    <input className = 'pa3 w-60-m bg-light-gray' type="search" 
                     placeholder= 'search here'
                     onChange ={searchChange}
-                    /><button  className ='pa3 mb3'><i className="fa fa-search fa-search"></i></button>  
+                    />
+                    <button  className ='pa3 mb3'><i className="fa fa-search fa-search"></i></button>
                     </div>
+                </div>
                 </div>
             </div>
         );

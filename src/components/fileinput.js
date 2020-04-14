@@ -38,14 +38,14 @@ class FileInput extends React.Component {
         </Form.Group>
         <Form.Group controlId="exampleForm.ControlTextarea1">
           <Form.File
-            id="Uploaded File"
+            id="File"
             label="Upload File"
             custom
             
           />
         </Form.Group>
         <Button onClick={()=>this.handleSubmit} variant="primary" type="submit">
-          Submit
+          Upload 
         </Button>
       </form>
     );
