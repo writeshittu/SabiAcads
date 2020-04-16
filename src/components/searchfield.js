@@ -14,8 +14,8 @@ let backgroundStyle = {
         return(
             <div style={backgroundStyle} >
                 <div className="container-fluid">
-                <div className ='row'>
-                    <div className ='ccol col-sm-3 mt5 offset-2 tc bg-white' >
+                <div className ='row center'>
+                    <div className ='col-sm-3 mt5 offset-2 tc bg-white' >
                     <h3  className ="ma3"> Let’s start something</h3>
                     <p>Begin a plan to meet your 2020 goals with our courses</p>
                     <input className = 'pa3 w-60-m bg-light-gray' type="search" 

@@ -141,7 +141,7 @@ class Courses extends React.Component {
                     <div className="row center">
                         {
                             this.props.data.map(data =>
-                                <div className="col col-sm-3 col-xs-6 mb4">
+                                <div className="col-sm-3 col-md-3 col-xs-6 mb4">
                                     
                                     <Cards title={data.name} description={data.description} onSubscribe={this.onSubscribe} subscribed={(this.state.subscribedCourses === undefined) ? false : this.state.subscribedCourses.includes(data.id)} id={data.id} links={data.links} image={data.image} />
                                 </div>
