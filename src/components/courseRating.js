@@ -15,7 +15,7 @@ class VideoRating extends React.Component {
           rating={this.state.rating}
           starRatedColor="golden"
           changeRating={this.changeRating}
-          numberOfStars={6}
+          numberOfStars={5}
           name='rating'
         />
       );
@@ -29,8 +29,8 @@ class StarBar extends React.Component {
     return (
       <StarRatings
         rating={2.403}
-        starDimension="25px"
-        starSpacing="5px"
+        starDimension="20px"
+        starSpacing="3px"
       />
     );
   }

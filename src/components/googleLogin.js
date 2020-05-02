@@ -23,6 +23,7 @@ import {withRouter} from "react-router-dom";
           buttonText="Login"
           onSuccess={(response)=>this.responseGoogle(response,this.props.isStudent)}
           onFailure={this.responseGoogle}
+          // scope="profile email https://www.googleapis.com/auth/youtube.force-ssl https://www.googleapis.com/auth/youtubepartner"
           cookiePolicy={'single_host_origin'}
         />
           

@@ -77,7 +77,7 @@ class Cards extends React.Component {
 class Courses extends React.Component {
 
     constructor(props) {
-        console.log("API ==> " + util.API_BASE_URL);
+        // console.log("API ==> " + util.API_BASE_URL);
         super(props);
         this.state = {
             subscribedCourses : []
@@ -91,13 +91,13 @@ class Courses extends React.Component {
     }
 
     onSubscribe = (courseId)=> {
-        console.log("Passed Id is " + courseId);
+        // console.log("Passed Id is " + courseId);
         axios.get(`${util.API_BASE_URL}subscriptions/${window.localStorage.getItem('email')}`)
         .then(res => {
             if (res.data !== undefined && res.data.id !== undefined) {
                 var currentSubscribedCourses = res.data.courses;
                 currentSubscribedCourses.push(courseId);
-                console.log("Data to put ");
+                // console.log("Data to put ");
                 console.log(currentSubscribedCourses);
                 axios.put(`${util.API_BASE_URL}subscriptions/${window.localStorage.getItem('email')}`, { courses : currentSubscribedCourses})
                 .then(res=>{
@@ -141,7 +141,7 @@ class Courses extends React.Component {
                     <div className="row center">
                         {
                             this.props.data.map(data =>
-                                <div className="col-sm-3 col-md-3 col-xs-6 mb4">
+                                <div className="col-sm col-md-4 col-xs mb4">
                                     
                                     <Cards title={data.name} description={data.description} onSubscribe={this.onSubscribe} subscribed={(this.state.subscribedCourses === undefined) ? false : this.state.subscribedCourses.includes(data.id)} id={data.id} links={data.links} image={data.image} />
                                 </div>
