@@ -1,5 +1,5 @@
 import React from "react";
-import StarBar from './courseRating';
+import StarRating from './courseRating';
 import Card from 'react-bootstrap/Card';
 import { Modal, Button } from "react-bootstrap";
 import axios from 'axios';
@@ -43,7 +43,7 @@ class Cards extends React.Component {
                             {this.props.subscribed && <button className="pa2 btn-primary pointer o-20" disabled onClick={()=>this.props.onSubscribe(this.props.id)}>SUBSCRIBE</button>}
                             {!this.props.subscribed && <button className="pa2 btn-primary"  onClick={()=>this.props.onSubscribe(this.props.id)}>SUBSCRIBE</button>}
                             </div>
-                        <p className="tc mt3"><StarBar /></p>
+                        <p className="tc"><StarRating /></p>
                     </Card.Footer>
                 </Card>
 

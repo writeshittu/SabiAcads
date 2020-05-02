@@ -1,6 +1,5 @@
 import React from 'react';
-import {BrowserRouter as Router,Route,Switch} from 'react-router-dom'
-
+import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
 
 import Dashboard from './components/Dashboard';
 import Cardlist from './components/Cardlist';

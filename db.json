@@ -19,7 +19,7 @@
       "description": "Introduction to Html and Css",
       "links": [
         {
-          "url": "https://www.youtube.com/embed/JKCgwL-IfgM",
+          "url": "https://www.youtube.com/watch?v=UB1O30fR-EE&t=2858s",
           "title": "HTML & CSS Part 1"
         }
       ]
@@ -31,7 +31,7 @@
       "description": "Introduction to Sass",
       "links": [
         {
-          "url": "https://youtube.com/",
+          "url": "https://www.youtube.com/watch?v=St5B7hnMLjg&list=PL4cUxeGkcC9iEwigam3gTjU_7IA3W2WZA",
           "title": "HTML & CSS Part 1"
         }
       ]
@@ -43,7 +43,7 @@
       "description": "Introduction to Javascript",
       "links": [
         {
-          "url": "https://youtube.com/",
+          "url": "https://www.youtube.com/watch?v=vEROU2XtPR8",
           "title": "HTML & CSS Part 1"
         }
       ]
@@ -67,7 +67,7 @@
       "description": "Introduction to Python",
       "links": [
         {
-          "url": "https://youtube.com/",
+          "url": "https://www.youtube.com/watch?v=WGJJIrtnfpk",
           "title": "HTML & CSS Part 1"
         }
       ]
@@ -79,7 +79,7 @@
       "description": "Introduction to Nodejs",
       "links": [
         {
-          "url": "https://youtube.com/",
+          "url": "https://www.youtube.com/watch?v=JnvKXcSI7yk",
           "title": "HTML & CSS Part 1"
         }
       ]
@@ -91,7 +91,7 @@
       "description": "Introduction to Angularjs",
       "links": [
         {
-          "url": "https://youtube.com/",
+          "url": "https://www.youtube.com/watch?v=pTec1e8oyc8",
           "title": "HTML & CSS Part 1"
         }
       ]
@@ -103,7 +103,7 @@
       "description": "Introduction to CSharp",
       "links": [
         {
-          "url": "https://youtube.com/",
+          "url": "https://www.youtube.com/watch?v=wfWxdh-_k_4",
           "title": "HTML & CSS Part 1"
         }
       ]
@@ -201,6 +201,18 @@
         }
       ],
       "id": "Pz6FZEM"
+    },
+    {
+      "id": "6eyeHYi"
+    },
+    {
+      "id": "bvsHhMI"
+    },
+    {
+      "id": "wkpXA-T"
+    },
+    {
+      "id": "I7RCT61"
     }
   ],
   "subscriptions": [
@@ -218,7 +230,8 @@
         "html-css",
         "html-css",
         "react",
-        "angularjs"
+        "angularjs",
+        "aC-97Er"
       ],
       "id": "writeshittu@gmail.com"
     },
