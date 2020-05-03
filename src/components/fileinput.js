@@ -22,6 +22,7 @@ class FileInput extends React.Component {
     this.setState({
       fields,
     });
+    // console.log(fields)
   }
 
   validateForm() {
@@ -48,14 +49,14 @@ class FileInput extends React.Component {
       formIsValid = false;
       errors["courseTitle"] = "Cannot be empty";
     }
-    if (!fields["imagefile"]) {
-      formIsValid = false;
-      errors["imagefile"] = "Image not selected ";
-    }
-    if (!fields["videofile"]) {
-      formIsValid = false;
-      errors["videofile"] = "Video not selected ";
-    }
+    // if (!fields["imagefile"]) {
+    //   formIsValid = false;
+    //   errors["imagefile"] = "Image not selected ";
+    // }
+    // if (!fields["videofile"]) {
+    //   formIsValid = false;
+    //   errors["videofile"] = "Video not selected ";
+    // }
     this.setState({ errors: errors });
     return formIsValid;
   }
@@ -64,7 +65,7 @@ class FileInput extends React.Component {
     e.preventDefault();
 
     if (this.validateForm()) {
-      alert("No file selected");
+      alert("Form has Error");
     } else {
       const uploadPreset = "h13wbqtf";
       const url = "https://api.cloudinary.com/v1_1/undercover/upload";
@@ -110,12 +111,12 @@ class FileInput extends React.Component {
 
               image: imageUrl,
 
-              description: this.state.fields["description"],
+              description: this.state.fields["courseTitle"],
               links: [
                 {
                   url: videoUrl,
 
-                  title: this.state.fields["courseTitle"],
+                  title: this.state.fields["description"],
                 },
               ],
             };
@@ -138,10 +139,11 @@ class FileInput extends React.Component {
         alert("Error occurred during file upload");
       }
       this.setState({
-        fields: {},
+        fields: ''
       });
       this.setState({
         uploading: false,
+        fields : '',
       });
      
     }
@@ -154,7 +156,7 @@ class FileInput extends React.Component {
           <Form.Label>Course Name</Form.Label>
           <Form.Control
             onChange ={this.handleChange}
-            value = {this.state.fields["courseName"]}
+            // value = {this.state.fields["courseName"]}
             name="courseName"
             type="text"
             placeholder="Course"
@@ -168,7 +170,7 @@ class FileInput extends React.Component {
           <Form.Label>Course Title </Form.Label>
           <Form.Control
             onChange={this.handleChange}
-            value = {this.state.fields["courseTitle"]}
+            // value = {this.state.fields["courseTitle"]}
             name="courseTitle"
             type="text"
             placeholder="course title"
@@ -182,7 +184,7 @@ class FileInput extends React.Component {
           <Form.Label>Course Description</Form.Label>
           <Form.Control
             onChange={this.handleChange}
-            value = {this.state.fields["description"]}
+            // value = {this.state.fields["description"]}
             name="description"
             as="textarea"
             rows="3"
@@ -199,7 +201,7 @@ class FileInput extends React.Component {
             className="pa2"
             type="file"
             name="videofile"
-            value = {this.state.fields["videofile"]}
+            // value = {this.state.fields["videofile"]}
             label="Choose Video to upload"
             id="videoFile"
             ref={(file) => (this.videoUpload = file)}
@@ -214,7 +216,7 @@ class FileInput extends React.Component {
           <input
             className="pa2 custom-file"
             type="file"
-            value = {this.state.fields["imagefile"]}
+            // value = {this.state.fields["imagefile"]}
             name="imagefile"
             label="Choose Image to upload"
             id="imageFile"

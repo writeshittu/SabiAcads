@@ -23,18 +23,19 @@ class Cards extends React.Component {
         this.setState({ modalShow: false, modalTitle : "", url : "" })
     }
 
-    setModalShow = (title, url) => {
-        this.setState({ modalShow: true, modalTitle : title, url : url })
+    setModalShow = (description, url) => {
+        this.setState({ modalShow: true, modalTitle : description, url : url })
     }
 
     render() {
         return (
             <div>
                 <Card >
-                    <Card.Img variant="top" src={this.props.image} height={200} onClick={() => this.setModalShow(this.props.title, this.props.links[0].url)} />
+                    
+                    <Card.Img className ="pointer grow" variant="top" src={this.props.image} height={200} onClick={() => this.setModalShow(this.props.name, this.props.links[0].url)} />
                     <Card.Body >
                         <Card.Text style={{minHeight:"50px"}}>
-                            {this.props.title}
+                            {this.props.name}
                             <p>{this.props.description}</p>
                         </Card.Text>
                     </Card.Body>
@@ -141,9 +142,9 @@ class Courses extends React.Component {
                     <div className="row center">
                         {
                             this.props.data.map(data =>
-                                <div className="col-sm col-md-4 col-xs mb4">
+                                <div className="col-sm col-md-3 col-xs mb4">
                                     
-                                    <Cards title={data.name} description={data.description} onSubscribe={this.onSubscribe} subscribed={(this.state.subscribedCourses === undefined) ? false : this.state.subscribedCourses.includes(data.id)} id={data.id} links={data.links} image={data.image} />
+                                    <Cards name={data.name} description={data.description} onSubscribe={this.onSubscribe} subscribed={(this.state.subscribedCourses === undefined) ? false : this.state.subscribedCourses.includes(data.id)} id={data.id} links={data.links} image={data.image} />
                                 </div>
                             )
                         } 
