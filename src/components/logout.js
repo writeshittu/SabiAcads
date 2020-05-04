@@ -20,7 +20,7 @@ class Logout extends React.Component{
        <GoogleLogout
        clientId="568403139567-nde0j10n0crvensdfsi4vres3806rbp8.apps.googleusercontent.com"
        render={renderProps => (
-         <button variant="outline-success" className="bg-light-blue" onClick={renderProps.onClick} >Log me Out</button>
+         <button variant="outline-success" className="bg-light-blue" onClick={renderProps.onClick}>Log me Out</button>
        )}
          buttonText="Logout"
          onLogoutSuccess={this.logout}
