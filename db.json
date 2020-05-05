@@ -147,7 +147,11 @@
   ],
   "subscriptions": [
     {
-      "courses": [],
+      "courses": [
+        "html-css",
+        "react",
+        "6XY2Pl6"
+      ],
       "id": "writeshittu@gmail.com"
     },
     {

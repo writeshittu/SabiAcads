@@ -21,7 +21,7 @@ class DashNav extends React.Component{
                 <Nav className="ml-auto">
                 <Nav.Link>Teach on Udemy</Nav.Link>
                 <Nav.Link href="#link"><i className="fa fa-heart fa-heart"></i></Nav.Link>
-                <Nav.Link href="#link"><i className="fa fa-cart-plus"></i></Nav.Link>
+                <Nav.Link href="#link"><i className="fa fa-cart-plus" style={{color:"red"}}></i></Nav.Link>
                 <NavDropdown title="Courses" id="basic-nav-dropdown">
                     <NavDropdown.Item href="#"> HTML & CSS</NavDropdown.Item>
                     <NavDropdown.Item href="#"> SASS</NavDropdown.Item>

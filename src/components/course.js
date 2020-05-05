@@ -186,7 +186,7 @@ class Courses extends React.Component {
   render() {
     return (
       <div>
-        <p>You have Subscribed {this.state.subscribedCourses.length} Courses</p>
+        <p>You have {this.state.subscribedCourses.length} Courses in  <i className="fa fa-cart-plus" style={{color:"red"}}></i></p>
         <div className="container-fluid">
           <div className="row center">
             {this.props.data.map((data) => (

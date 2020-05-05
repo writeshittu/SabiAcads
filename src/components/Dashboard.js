@@ -52,7 +52,7 @@ class Dashboard extends React.Component {
     render() {
         return (
             <div>
-                <DashNav />
+                <DashNav/>
                 {window.localStorage.getItem('isStudent') !== "true" && <div>
                     <Jumbotron className="container">
                         <h4>Hello, {window.localStorage.name}</h4>
