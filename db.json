@@ -31,7 +31,7 @@
       "description": "Sass Tutorial for Beginners",
       "links": [
         {
-          "url": "https://www.youtube.com/embed/_a5j7KoflTs", 
+          "url": "https://www.youtube.com/embed/_a5j7KoflTs",
           "title": "HTML & CSS Part 1"
         }
       ]
@@ -79,7 +79,7 @@
       "description": "Getting started with Node.Js",
       "links": [
         {
-          "url": "https://www.youtube.com/embed/gG3pytAY2MY" ,
+          "url": "https://www.youtube.com/embed/gG3pytAY2MY",
           "title": "HTML & CSS Part 1"
         }
       ]
@@ -103,13 +103,13 @@
       "description": "Introduction to CSharp",
       "links": [
         {
-          "url":"https://www.youtube.com/embed/GhQdlIFylQ8?start=25",
+          "url": "https://www.youtube.com/embed/GhQdlIFylQ8?start=25",
           "title": ""
         }
       ]
     },
-   
-    {  "name": "Go Promgramming ",
+    {
+      "name": "Go Promgramming ",
       "image": "http://res.cloudinary.com/undercover/image/upload/v1588514444/dhfpwc86qjjbaz72x14j.png",
       "description": "Concurrency in GO ",
       "links": [
@@ -120,7 +120,8 @@
       ],
       "id": "h_4TVcE"
     },
-    {  "name": "Javascript",
+    {
+      "name": "Javascript",
       "image": "http://res.cloudinary.com/undercover/image/upload/v1588515226/u2peg022hyvzksn6xug9.png",
       "description": "ES6 Javascript",
       "links": [
@@ -130,13 +131,23 @@
         }
       ],
       "id": "sYJQT1-"
+    },
+    {
+      "name": "React.Js",
+      "image": "http://res.cloudinary.com/undercover/image/upload/v1588673416/k0tlre2tgekez8hitkox.png",
+      "description": "React Review",
+      "links": [
+        {
+          "url": "http://res.cloudinary.com/undercover/video/upload/v1588673711/qklaoxmqlxdz0b58flly.mp4",
+          "title": "Review of best practices in React.Js"
+        }
+      ],
+      "id": "6XY2Pl6"
     }
   ],
   "subscriptions": [
     {
-      "courses": [
-        
-      ],
+      "courses": [],
       "id": "writeshittu@gmail.com"
     },
     {
