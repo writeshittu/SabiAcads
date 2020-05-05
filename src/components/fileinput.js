@@ -35,12 +35,6 @@ class FileInput extends React.Component {
       errors["courseName"] = "Cannot be empty";
     }
 
-    if (typeof fields["courseName"] !== "undefined") {
-      if (!fields["courseName"].match(/^[a-zA-Z]+$/)) {
-        formIsValid = false;
-        errors["courseName"] = "Only letters";
-      }
-    }
     if (!fields["courseTitle"]) {
       formIsValid = false;
       errors["courseTitle"] = "Cannot be empty";
